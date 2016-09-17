@@ -37,7 +37,7 @@ class TicTacToeNode
     empty_positions.map do |pos|
       board = Board.new(deep_dup(@board.rows))
       board[pos] = @next_mover_mark
-      child = TicTacToeNode.new(board,other_mark(@next_mover_mark),pos)
+      TicTacToeNode.new(board,other_mark(@next_mover_mark),pos)
     end
   end
 

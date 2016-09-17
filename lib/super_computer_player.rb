@@ -4,7 +4,7 @@ class SuperComputerPlayer < ComputerPlayer
   def move(game, mark)
     node = TicTacToeNode.new(game.board, mark)
     children = node.children
-    
+
     winner = children.find { |child| child.winning_node?(mark) }
     return winner.prev_move_pos unless winner.nil?
 
@@ -14,7 +14,7 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   puts "Play the brilliant computer!"
-  hp = HumanPlayer.new("Jeff")
+  hp = HumanPlayer.new("Borky")
   cp = SuperComputerPlayer.new
 
   TicTacToe.new(hp, cp).run
